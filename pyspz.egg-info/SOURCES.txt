@@ -1,0 +1,16 @@
+LICENSE
+README.md
+pyproject.toml
+pyspz/__init__.py
+pyspz/_core.py
+pyspz/_dequantize.py
+pyspz/_header.py
+pyspz.egg-info/PKG-INFO
+pyspz.egg-info/SOURCES.txt
+pyspz.egg-info/dependency_links.txt
+pyspz.egg-info/requires.txt
+pyspz.egg-info/top_level.txt
+tests/test_core.py
+tests/test_dequantize.py
+tests/test_header.py
+tests/test_validation.py
