@@ -6,6 +6,7 @@ A Python library for reading SPZ (3D Gaussian Splatting) files. This library pro
 
 - **Full SPZ Format Support**: Supports SPZ versions 2 and 3
 - **Spherical Harmonics**: Handles spherical harmonics coefficients (degrees 0-3)
+- **3D Tiles Integration**: Convert SPZ files to 3D Tiles tilesets for spatial visualization
 - **Vectorized Operations**: Efficient NumPy-based decoding
 - **Minimal Dependencies**: Only requires NumPy (SciPy optional for quaternion operations)
 - **Binary Compatibility**: Maintains compatibility with the original C++ implementation
@@ -35,6 +36,24 @@ rotations = data['rotations'] # (N, 4) quaternions (w,x,y,z)
 # Spherical harmonics (if present)
 if 'sh_coeffs' in data:
     sh_coeffs = data['sh_coeffs']  # (N, K, 3) SH coefficients
+```
+
+### 3D Tiles Tileset Generation
+
+```python
+import pyspz
+
+# Convert SPZ file to 3D Tiles tileset
+tileset = pyspz.spz_to_tileset("model.spz", "output/", max_points_per_tile=10000)
+
+print(f"Created {tileset['properties']['numberOfTiles']} tiles")
+print(f"Total points: {tileset['properties']['numberOfPoints']}")
+
+# The tileset is saved as:
+# - output/tileset.json (main tileset file)
+# - output/tiles/tile_000.json (individual tile files)
+# - output/tiles/tile_001.json
+# - ...
 ```
 
 ## Supported SPZ Versions
@@ -100,6 +119,22 @@ Load 3D Gaussian Splatting data from an SPZ file.
 - `ValueError`: If the file format is invalid or unsupported
 - `RuntimeError`: If there are issues reading the file
 
+### `pyspz.spz_to_tileset(spz_file, output_dir, max_points_per_tile=10000)`
+
+Convert SPZ file to 3D Tiles tileset for spatial visualization.
+
+**Parameters:**
+- `spz_file` (str): Path to .spz file
+- `output_dir` (str): Output directory for tileset files
+- `max_points_per_tile` (int): Maximum number of Gaussians per tile (default: 10000)
+
+**Returns:**
+- `Dict`: Dictionary containing tileset metadata
+
+**Raises:**
+- `ValueError`: If the SPZ file is invalid
+- `RuntimeError`: If there are issues creating the tileset
+
 ## Requirements
 
 - Python 3.8+
@@ -151,4 +186,5 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 - Support for SPZ versions 2 and 3
 - Spherical harmonics support (degrees 0-3)
 - Vectorized decoding operations
+- 3D Tiles tileset generation
 - Comprehensive test suite

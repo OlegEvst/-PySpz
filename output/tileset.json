@@ -1,0 +1,124 @@
+{
+  "asset": {
+    "version": "1.0",
+    "generator": "PySpz Tileset Generator",
+    "generatorVersion": "0.1.0"
+  },
+  "properties": {
+    "numberOfPoints": 2,
+    "numberOfTiles": 1
+  },
+  "geometricError": 1.7320507764816284,
+  "root": {
+    "boundingVolume": {
+      "box": [
+        0.5,
+        0.5,
+        0.5,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "geometricError": 1.7320507764816284,
+    "refine": "ADD",
+    "children": [
+      {
+        "id": "tile_000",
+        "bounding_volume": {
+          "box": [
+            0.5,
+            0.5,
+            0.5,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0.5,
+            0.5,
+            0.5
+          ]
+        },
+        "geometric_error": 1.7320507764816284,
+        "refine": "REPLACE",
+        "content": {
+          "uri": "tiles/tile_000.json"
+        },
+        "data": {
+          "positions": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0,
+              1.0
+            ]
+          ],
+          "colors": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ]
+          ],
+          "alphas": [
+            [
+              0.5
+            ],
+            [
+              0.6000000238418579
+            ]
+          ],
+          "scales": [
+            [
+              1.0,
+              1.0,
+              1.0
+            ],
+            [
+              2.0,
+              2.0,
+              2.0
+            ]
+          ],
+          "rotations": [
+            [
+              1.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0,
+              0.0
+            ]
+          ]
+        }
+      }
+    ]
+  }
+}
