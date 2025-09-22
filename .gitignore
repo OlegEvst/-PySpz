@@ -164,3 +164,18 @@ cython_debug/
 # Project-specific files
 contex.md
 TZ.md
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.whl
+*.tar.gz
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Example files
+example_usage.py
